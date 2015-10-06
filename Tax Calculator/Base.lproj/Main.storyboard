@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CdY-26-omi">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tax Calculator-->
+        <scene sceneID="775-Fk-7uS">
+            <objects>
+                <tableViewController id="NR3-qa-Wz8" customClass="TableViewController" customModule="Tax_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Edf-7j-LVS">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <sections>
+                            <tableViewSection headerTitle="Price" footerTitle="* Enter the price to calculate with the tax rate." id="FIU-DU-fhc">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rQU-ha-daj">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rQU-ha-daj" id="qRf-LK-IsL">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3H2-PP-whe">
+                                                    <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3H2-PP-whe" secondAttribute="bottom" constant="-2" id="5kw-Ci-2FB"/>
+                                                <constraint firstItem="3H2-PP-whe" firstAttribute="top" secondItem="qRf-LK-IsL" secondAttribute="topMargin" constant="-1" id="NlL-pu-g9d"/>
+                                                <constraint firstItem="3H2-PP-whe" firstAttribute="leading" secondItem="qRf-LK-IsL" secondAttribute="leadingMargin" id="bsy-7i-Xsi"/>
+                                                <constraint firstItem="3H2-PP-whe" firstAttribute="trailing" secondItem="qRf-LK-IsL" secondAttribute="trailingMargin" id="sYJ-Ot-hYy"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="3H2-PP-whe"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="5kw-Ci-2FB"/>
+                                                    <exclude reference="NlL-pu-g9d"/>
+                                                    <exclude reference="bsy-7i-Xsi"/>
+                                                    <exclude reference="sYJ-Ot-hYy"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="3H2-PP-whe"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="5kw-Ci-2FB"/>
+                                                    <include reference="NlL-pu-g9d"/>
+                                                    <include reference="bsy-7i-Xsi"/>
+                                                    <include reference="sYJ-Ot-hYy"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="TAX" footerTitle="* Use the slider to adjust the tax rate." id="5tx-s8-q3B">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="GzR-Ie-D8j">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GzR-Ie-D8j" id="QQo-yI-4QE">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="Lrk-4r-Hyg">
+                                                    <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                                    <connections>
+                                                        <action selector="sliderDidChangeValue:" destination="NR3-qa-Wz8" eventType="valueChanged" id="OV9-Kq-Oqo"/>
+                                                    </connections>
+                                                </slider>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Lrk-4r-Hyg" firstAttribute="trailing" secondItem="QQo-yI-4QE" secondAttribute="trailingMargin" id="55y-yo-WUO"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Lrk-4r-Hyg" secondAttribute="bottom" constant="-2" id="9y1-DB-mkn"/>
+                                                <constraint firstItem="Lrk-4r-Hyg" firstAttribute="top" secondItem="QQo-yI-4QE" secondAttribute="topMargin" constant="-1" id="JU7-Uf-R4Q"/>
+                                                <constraint firstItem="Lrk-4r-Hyg" firstAttribute="leading" secondItem="QQo-yI-4QE" secondAttribute="leadingMargin" id="xQL-0n-pU0"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="Lrk-4r-Hyg"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="55y-yo-WUO"/>
+                                                    <exclude reference="9y1-DB-mkn"/>
+                                                    <exclude reference="JU7-Uf-R4Q"/>
+                                                    <exclude reference="xQL-0n-pU0"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="Lrk-4r-Hyg"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="55y-yo-WUO"/>
+                                                    <include reference="9y1-DB-mkn"/>
+                                                    <include reference="JU7-Uf-R4Q"/>
+                                                    <include reference="xQL-0n-pU0"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Result" id="UlM-jo-IhC">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="j0r-Ya-M7F">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j0r-Ya-M7F" id="uJV-EP-7V7">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yen-lX-ubx">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yen-lX-ubx" firstAttribute="top" secondItem="uJV-EP-7V7" secondAttribute="topMargin" constant="3" id="WUX-Ze-TKl"/>
+                                                <constraint firstItem="yen-lX-ubx" firstAttribute="trailing" secondItem="uJV-EP-7V7" secondAttribute="trailingMargin" id="bcy-1T-M4L"/>
+                                                <constraint firstItem="yen-lX-ubx" firstAttribute="leading" secondItem="uJV-EP-7V7" secondAttribute="leadingMargin" id="rdt-VH-GhL"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="yen-lX-ubx" secondAttribute="bottom" constant="3" id="uqd-x5-KPD"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="yen-lX-ubx"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="WUX-Ze-TKl"/>
+                                                    <exclude reference="bcy-1T-M4L"/>
+                                                    <exclude reference="rdt-VH-GhL"/>
+                                                    <exclude reference="uqd-x5-KPD"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="yen-lX-ubx"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="WUX-Ze-TKl"/>
+                                                    <include reference="bcy-1T-M4L"/>
+                                                    <include reference="rdt-VH-GhL"/>
+                                                    <include reference="uqd-x5-KPD"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="NR3-qa-Wz8" id="dPf-fh-rNC"/>
+                            <outlet property="delegate" destination="NR3-qa-Wz8" id="yCr-VQ-pOo"/>
+                            <outletCollection property="gestureRecognizers" destination="DFX-Ib-bf0" appends="YES" id="87G-Cz-SvK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Tax Calculator" id="Vuq-BB-lhP"/>
+                    <connections>
+                        <outlet property="priceTextField" destination="3H2-PP-whe" id="qmR-Yl-EbT"/>
+                        <outlet property="priceTextLabel" destination="yen-lX-ubx" id="Gi1-d7-jHz"/>
+                        <outlet property="taxSlider" destination="Lrk-4r-Hyg" id="3rC-Uj-U46"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iqw-eg-kTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="DFX-Ib-bf0">
+                    <connections>
+                        <action selector="didTapped:" destination="NR3-qa-Wz8" id="2E1-3q-QI5"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1825.5" y="306"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KCv-Xp-IRX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CdY-26-omi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sBZ-8i-1Oa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NR3-qa-Wz8" kind="relationship" relationship="rootViewController" id="UcC-XY-Sza"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pVN-tT-SGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907.5" y="306"/>
+        </scene>
+    </scenes>
+</document>
